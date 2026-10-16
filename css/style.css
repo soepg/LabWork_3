@@ -1,13 +1,13 @@
 /* 1. Typography & Custom Fonts */
 @font-face {
   font-family: "Young Serif";
-  src: url("/assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
   font-weight: 400; 
 }
 
 @font-face {
   font-family: "Outfit";
-  src: url("/assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
+  src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
 }
 

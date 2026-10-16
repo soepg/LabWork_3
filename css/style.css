@@ -1,14 +1,17 @@
+/* 1. Typography & Custom Fonts */
 @font-face {
   font-family: "Young Serif";
   src: url("/assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
   font-weight: 400; 
 }
+
 @font-face {
   font-family: "Outfit";
   src: url("/assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
 }
 
+/* 2. Design System Variables (Colors) */
 :root {
   --white: hsl(0, 0%, 100%);
   --stone-100: hsl(30, 54%, 90%);
@@ -20,8 +23,9 @@
   --rose-50: hsl(330, 100%, 98%);
 }
 
+/* 3. Base Styles & Box Model Reset */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
 }
 
 body {
@@ -33,14 +37,15 @@ body {
   line-height: 1.5;
 }
 
+/* 4. Page Layout & Recipe Card Container */
 .recipe-page {
-  padding: 123px 24px;
+  padding: 123px 24px; /* Outer spacing for desktop view */
 }
 
 .recipe-card {
   width: 100%;
   max-width: 736px;
-  margin: 0 auto;
+  margin: 0 auto; /* Centers the card horizontally */
   padding: 40px;
   background-color: var(--white);
   border-radius: 16px;
@@ -49,23 +54,25 @@ body {
 .recipe-image {
   display: block;
   width: 100%;
-  height: auto;
+  height: auto; /* Maintains image aspect ratio */
   border-radius: 12px;
 }
 
+/* 5. Content Structure (Flexbox) */
 .recipe-content {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 32px; /* Vertical spacing between major sections */
   padding-top: 28px;
 }
 
 .recipe-header {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 16px; /* Spacing between the main title and description */
 }
 
+/* 6. Headings */
 .recipe-title, h2 {
   margin: 0;
   font-family: "Young Serif", serif;
@@ -84,6 +91,7 @@ h2 {
   line-height: 1.1;
 }
 
+/* 7. Preparation Section */
 .preparation {
   padding: 24px;
   background-color: var(--rose-50);
@@ -108,13 +116,14 @@ h2 {
 }
 
 .preparation-list li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Removes bottom margin from the last item to keep padding even */
 }
 
+/* 8. Ingredients & Instructions Lists */
 .ingredients,
 .instructions {
   padding-bottom: 32px;
-  border-bottom: 1px solid var(--stone-150);
+  border-bottom: 1px solid var(--stone-150); /* Separator line between sections */
 }
 
 .ingredients-list,
@@ -133,6 +142,7 @@ h2 {
   margin-bottom: 0;
 }
 
+/* Customizing list markers (bullets/numbers) */
 .ingredients-list li::marker {
   color: var(--brown-800);
 }
@@ -142,10 +152,11 @@ h2 {
   font-weight: 700;
 }
 
+/* 9. Nutrition Table */
 .nutrition-table {
   width: 100%;
   margin-top: 20px;
-  border-collapse: collapse;
+  border-collapse: collapse; /* Merges table borders for a clean look */
 }
 
 .nutrition-table tr {
@@ -153,7 +164,7 @@ h2 {
 }
 
 .nutrition-table tr:last-child {
-  border-bottom: 0;
+  border-bottom: 0; /* Removes border from the last row */
 }
 
 .nutrition-table th,
@@ -171,31 +182,38 @@ h2 {
   font-weight: 700;
 }
 
+/* 10. Responsive Design (Mobile View) */
 @media (max-width: 600px) {
   .recipe-page {
-    padding: 0;
+    padding: 0; /* Removes outer page padding so the card touches the screen edges */
   }
+  
   .recipe-card {
     max-width: none;
     padding: 0;
-    border-radius: 0;
+    border-radius: 0; /* Makes the card span edge-to-edge */
   }
+  
   .recipe-image {
-    border-radius: 0;
+    border-radius: 0; /* Removes rounded corners from the image on mobile */
   }
+  
   .recipe-content {
     gap: 32px;
-    padding: 40px 32px;
+    padding: 40px 32px; /* Restores internal padding for text content */
   }
+  
   .recipe-title {
-    font-size: 36px;
+    font-size: 36px; /* Slightly smaller title for mobile */
   }
+  
   .preparation {
     padding: 24px;
   }
+  
   .nutrition-table th,
   .nutrition-table td {
     padding-left: 32px;
-    padding-right: 32px;
+    padding-right: 32px; /* Adjusts table padding for narrower screens */
   }
 }
